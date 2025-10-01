@@ -14,7 +14,7 @@ app.use(expressLayouts);
 app.set("layout", "partials/layout");
 app.use(express.static("public"));
 
-// ✅ Default title middleware (prevents "title is not defined")
+// Default title middleware (prevents "title is not defined")
 app.use((req, res, next) => {
   res.locals.title = "Lyric Explorer"; 
   next();
@@ -54,8 +54,6 @@ app.get("/search", async (req, res) => {
   }
 });
 
-// Song Details + Lyrics
-// Song Details + Lyrics
 app.get("/song/:id", async (req, res) => {
   const songId = req.params.id;
   try {
@@ -73,8 +71,8 @@ app.get("/song/:id", async (req, res) => {
     $('div[data-lyrics-container="true"]').each((i, el) => {
       let blockText = $(el)
         .html()
-        .replace(/<br\s*\/?>/gi, "\n") // convert <br> to newlines
-        .replace(/<[^>]+>/g, "")       // strip remaining HTML
+        .replace(/<br\s*\/?>/gi, "\n")
+        .replace(/<[^>]+>/g, "")       
         .trim();
 
       if (blockText) {
@@ -85,7 +83,7 @@ app.get("/song/:id", async (req, res) => {
     // Merge into one string
     let lyrics = rawLyrics.join("\n\n");
 
-    // 🔑 Find where actual lyrics start ([Intro], [Verse], [Chorus], etc.)
+    // Find where actual lyrics start ([Intro], [Verse], [Chorus], etc.)
     const startMatch = lyrics.match(/(\[Intro\]|\[Verse.*?\]|\[Chorus\])/i);
     if (startMatch) {
       const startIndex = lyrics.indexOf(startMatch[0]);
