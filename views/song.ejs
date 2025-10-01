@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<section class="song-page">
+  <aside class="left-panel">
+    <div class="cover"><img src="<%= image %>" alt="<%= title %>"></div>
+    <h2 style="margin-top:10px"><%= title %></h2>
+    <p class="small"><%= artist %></p>
+    <p class="metadata small">Album: <%= album %> • Released: <%= releaseDate %></p>
+    <a class="cta" href="<%= url %>" target="_blank">View on Genius</a>
+  </aside>
+
+  <div class="right-panel">
+    <h3>Lyrics</h3>
+    <div class="lyrics">
+  <pre><%= lyrics %></pre>
+</div>
+
+  </div>
+</section>
+
+</body>
+</html>

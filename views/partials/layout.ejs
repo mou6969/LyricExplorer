@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %> | Lyric Explorer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+<header>
+  <div class="container">
+    <h1>Lyric Explorer</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/search">Search</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Lyric Explorer</p>
+  </footer>
+</body>
+</html>

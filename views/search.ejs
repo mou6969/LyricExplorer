@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results for <%= query %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<section>
+  <div class="spacer"></div>
+  <div class="results-grid">
+    <% results.forEach(song => { %>
+      <div class="card">
+        <div class="thumb"><img src="<%= song.image %>" alt="<%= song.title %>"></div>
+        <div class="meta">
+          <h3><%= song.title %></h3>
+          <p class="artist"><%= song.artist %></p>
+          <a class="cta" href="/song/<%= song.id %>">Open</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+</body>
+</html>
